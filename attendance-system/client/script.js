@@ -51,3 +51,14 @@ if (window.location.pathname.endsWith("home.html")) {
       window.location.href = "login.html"; // Redirect to login if no token is found
     }
   }
+
+  // Check if the user is already logged in on the login page
+if (window.location.pathname.endsWith("login.html")) {
+    const token = localStorage.getItem("token");
+    console.log("Token:", token);
+  
+    if (token) {
+      console.log("User is already logged in. Redirecting to home page.");
+      window.location.href = "home.html"; // Redirect to home if a token is found
+    }
+  }
