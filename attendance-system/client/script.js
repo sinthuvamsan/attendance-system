@@ -34,3 +34,9 @@ console.log(data)
   }
 });
 
+// Handle logout button click
+document.getElementById("logoutButton")?.addEventListener("click", () => {
+    localStorage.removeItem("token"); // Remove the JWT token
+    console.log("User logged out.");
+    window.location.href = "login.html"; // Redirect to the login page
+  });
