@@ -28,6 +28,7 @@ document.getElementById("loginForm")?.addEventListener("submit", async (e) => {
 
 console.log(data)
     localStorage.setItem("token", data.token); // Store the JWT token
+    window.location.href = "home.html"; // Redirect to the home page
   } catch (error) {
     document.getElementById("error").textContent = "Invalid username or password";
   }
