@@ -40,3 +40,14 @@ document.getElementById("logoutButton")?.addEventListener("click", () => {
     console.log("User logged out.");
     window.location.href = "login.html"; // Redirect to the login page
   });
+
+  // Check if the user is authenticated on the home page
+if (window.location.pathname.endsWith("home.html")) {
+    const token = localStorage.getItem("token");
+    console.log("Token:", token);
+  
+    if (!token) {
+      console.log("No token found. Redirecting to login page.");
+      window.location.href = "login.html"; // Redirect to login if no token is found
+    }
+  }
